@@ -16,6 +16,8 @@ class Register extends Component {
           email: '',
           password: '',
           password_confirm: '',
+          avatar: '',
+          img: '',
           errors: {}
         }
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -34,7 +36,9 @@ handleSubmit(e) {
     name: this.state.name,
     email: this.state.email,
     password: this.state.password,
-    password_confirm: this.state.password_confirm
+    password_confirm: this.state.password_confirm,
+    avatar: 'http://www.caseywhitcher.com/caseywhitcher/projects/familiarfaces/images/willf01.jpg',
+    img: 'http://www.caseywhitcher.com/caseywhitcher/projects/familiarfaces/images/willf01.jpg'
   }
   this.props.registerUser(user, this.props.history);
 }

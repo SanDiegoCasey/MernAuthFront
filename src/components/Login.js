@@ -29,7 +29,6 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     }
-    console.log(user);
     this.props.loginUser(user);
   }
 
@@ -41,7 +40,7 @@ class Login extends Component {
 
   componentWillReceiveProps(nextProps){
     if(nextProps.auth.isAuthenticated) {
-      this.props.history.push('/dashboard')
+      // this.props.history.push('/dashboard')
     }
     if(nextProps.errors) {
       this.setState({
