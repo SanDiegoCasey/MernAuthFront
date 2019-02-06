@@ -9,10 +9,12 @@ import store from './store'
 import Navbar from './components/Navbar'
 import Register from './components/Register'
 import Login from './components/Login'
-import Home from './components/Home'
+// import Home from './components/Home'
+import Landing from './components/Landing'
+import Dashboard from './components/Dashboard'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './index.css';
 
 class App extends Component {
   render() {
@@ -21,11 +23,13 @@ class App extends Component {
         <Router>
           <div>
           <Navbar />
-            <Route exact path="/" component={Home} />
-            <div className="container">
-              <Route exact path="/register" component={ Register} />
-              <Route exact path="/login" component={ Login }/>
-            </div>
+          {/* <Route exact path="/" component={Home} /> */}
+          <div className="">
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/register" component={ Register} />
+            <Route exact path="/login" component={ Login }/>
+          </div>
           </div>
         </Router>
       </Provider>

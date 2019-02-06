@@ -15,8 +15,8 @@ class Navbar extends Component {
     render() {
         const {isAuthenticated, user} = this.props.auth;
         const authLinks = (
-          <ul className="navbar-nav ml-auto">
-            <Link to="#" className="nav-link" onClick={this.onLogout.bind(this)}>
+          <ul className="">
+            <Link to="#" className="guest-menu-link" onClick={this.onLogout.bind(this)}>
               <img src={user.avatar} alt={user.name} title={user.name}
                 className="rounded-circle"
                 style={{ width: '25px', marginRight: '5px'}} />
@@ -25,22 +25,21 @@ class Navbar extends Component {
           </ul>
         )
         const guestLinks = (
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/register">Sign Up</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">Sign In</Link>
-            </li>
-          </ul>
+          <div className="guest-menu">
+            <span><Link className="guest-menu-link" to="/register">Sign Up</Link></span>
+            <span><Link className="guest-menu-link" to="/login">Sign In</Link></span>
+          </div>
         )
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link className="navbar-brand" to="/">Redux Auth</Link>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  {isAuthenticated ? authLinks : guestLinks}
-                </div>
-            </nav>
+              <nav className="dashboard-nav" role="navigation">
+                  <div className="parent">
+                      <div className="left-nav"><Link to="/dashboard">Home</Link></div>
+                      <div className="center-nav"><Link to="/"><img src="../SureLifeDataLogo-White-300w.png" alt="SureLifeData Logo"/></Link></div>
+                      <div className="">
+                        {isAuthenticated ? authLinks : guestLinks}
+                      </div>
+                  </div>
+              </nav>
         )
     }
 }
