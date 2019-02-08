@@ -36,6 +36,10 @@ label{
   font-weight: 500;
 }
 
+.form-group label {
+  text-align: left;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -43,7 +47,7 @@ body, html {
   font-family: "Open Sans",  sans-serif;
   font-size: 1.1em;
   color: #333;
-  text-align: center;
+  /* text-align: center; */
   height: 100%;
 }
 
@@ -145,13 +149,13 @@ body, html {
   color:#fff;
   margin-right: 10px;
   text-decoration: none;
-  font-size: 1em;
+  font-size: .9em;
 }
 
 .guest-menu-link:hover {
   color:#fff;
   margin-right: 10px;
-  font-size:1em;
+  font-size:.9em;
 }
 
 .left-nav:hover {
@@ -292,6 +296,10 @@ nav {
   max-width: 80%;
 }
 
+.center-nav {
+    text-align: center;
+}
+
 .left-nav{
   margin-left: 10px;
 }
@@ -332,7 +340,7 @@ nav {
 .right-nav-search a, .right-nav-login a, .right-nav-signup a, .left-nav a{
   color:#fff;
   text-decoration: none;
-  font-size: 1em;
+  font-size: .9em;
 }
 
 /* ------------------- End Nav ------------------- */
@@ -497,6 +505,7 @@ main {
 	text-decoration:none;
 }
 
+
 .invitebutton:hover, .deletebutton:hover{
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4c819f), color-stop(1, #789fb7));
 	background:-moz-linear-gradient(top, #4c819f 5%, #789fb7 100%);
@@ -624,6 +633,11 @@ header {
 .profilePhoto{
   display:flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.username-dashboard {
+  color: #4c819f;
 }
 
 .photo{

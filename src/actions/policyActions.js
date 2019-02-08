@@ -2,6 +2,8 @@ import axios from 'axios';
 import { GET_POLICIES, ADD_POLICY, DELETE_POLICY, ITEMS_LOADING } from './types';
 import { API_BASE_URL } from '../config';
 
+const userid = localStorage.getItem('id')
+
 export const getPolicies = () => dispatch => {
   dispatch(setItemsLoading);
   axios
@@ -17,7 +19,7 @@ export const getPolicies = () => dispatch => {
 
 export const addPolicy = policy => dispatch => {
   axios
-    .post(`${API_BASE_URL}/api/policies/`, policy)
+    .post(`${API_BASE_URL}/api/policies/${userid}`, policy)
     .then(res => dispatch({
       type: ADD_POLICY,
       payload: res.data

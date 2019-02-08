@@ -2,10 +2,12 @@ import axios from 'axios';
 import { GET_CONTACTS, DELETE_CONTACT, ADD_CONTACT, ITEMS_LOADING} from './types';
 import { API_BASE_URL } from '../config'
 
+const id = localStorage.getItem(id);
+
 export const getContacts = () => dispatch => {
   dispatch(setContactsLoading);
   axios
-    .get(`${API_BASE_URL}/api/contacts/`)
+    .get(`${API_BASE_URL}/api/contacts/${id}`)
     .then(res =>
       dispatch({
         type: GET_CONTACTS,
@@ -17,7 +19,7 @@ export const getContacts = () => dispatch => {
 
 export const addContact = contact => dispatch => {
   axios
-    .post(`${API_BASE_URL}/api/contacts/`, contact)
+    .post(`${API_BASE_URL}/api/contacts/${id}`, contact)
     .then(res => dispatch({
       type: ADD_CONTACT,
       payload: res.data

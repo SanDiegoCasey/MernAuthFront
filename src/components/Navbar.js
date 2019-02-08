@@ -15,14 +15,14 @@ class Navbar extends Component {
     render() {
         const {isAuthenticated, user} = this.props.auth;
         const authLinks = (
-          <ul className="">
+          <div>
             <Link to="#" className="guest-menu-link" onClick={this.onLogout.bind(this)}>
               <img src={user.avatar} alt={user.name} title={user.name}
                 className="rounded-circle"
                 style={{ width: '25px', marginRight: '5px'}} />
                 logoutUser
             </Link>
-          </ul>
+          </div>
         )
         const guestLinks = (
           <div className="guest-menu">

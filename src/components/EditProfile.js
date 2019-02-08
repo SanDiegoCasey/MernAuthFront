@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { registerUser } from '../actions/authentication';
 import classnames from 'classnames';
 
-class Register extends Component {
+class EditProfile extends Component {
 
     constructor() {
         super();
@@ -52,11 +52,11 @@ componentWillReceiveProps(nextProps){
     }
 }
 
-componentDidMount() {
-  if(this.props.auth.isAuthenticated) {
-    this.props.history.push('/');
-  }
-}
+// componentDidMount() {
+//   if(this.props.auth.isAuthenticated) {
+//     this.props.history.push('/');
+//   }
+// }
 
 render(){
   const { errors } = this.state;
@@ -118,14 +118,5 @@ render(){
   )
 }
 }
-Register.propTypes = {
-  registerUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
-}
 
-const mapStateToProps = state => ({
-  auth: state.auth,
-  errors: state.errors
-})
-
-export default connect(mapStateToProps, { registerUser })(withRouter(Register))
+export default EditProfile;

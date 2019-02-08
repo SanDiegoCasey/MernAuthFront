@@ -12,6 +12,8 @@ import {
   Input
 } from 'reactstrap';
 
+const id = localStorage.getItem('id');
+
 class PolicyModal extends Component {
   state = {
     modal: false,
@@ -19,7 +21,8 @@ class PolicyModal extends Component {
     typeofins: '',
     policynum: '',
     contactnum: '',
-    dollarvalue: ''
+    dollarvalue: '',
+    id: ''
   }
 
   toggle = () => {
@@ -56,7 +59,8 @@ class PolicyModal extends Component {
       typeofins: this.state.typeofins,
       policynum: this.state.policynum,
       contactnum: this.state.contactnum,
-      dollarvalue: this.state.dollarvalue
+      dollarvalue: this.state.dollarvalue,
+      id: id
     }
     // Add polciy via addPolciyAction
     this.props.addPolicy(newPolicy);
